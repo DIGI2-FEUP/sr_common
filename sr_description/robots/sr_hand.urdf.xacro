@@ -17,8 +17,9 @@
   <xacro:arg name="prox_sensors" default="none"/>
   <xacro:arg name="palm_sensor" default="none"/>
   <xacro:arg name="mounting_plate" default="false"/>
+  <xacro:arg name="sim_platform" default="gazebo"/>
 
-  <link name="world" />
+  <link name="world"/>
   <xacro:if value="${'$(arg side)' == 'right'}">
     <joint name="rh_world_joint" type="fixed">
       <parent link="world" />
@@ -35,6 +36,6 @@
   </xacro:if>
   <xacro:sr_hand hand_type="$(arg hand_type)" hand_version="$(arg hand_version)" side="$(arg side)"
                  fingers="$(arg fingers)" tip_sensors="$(arg tip_sensors)" mid_sensors="$(arg mid_sensors)"
-                 prox_sensors="$(arg prox_sensors)" palm_sensor="$(arg palm_sensor)" mounting_plate="$(arg mounting_plate)"/>
+                 prox_sensors="$(arg prox_sensors)" palm_sensor="$(arg palm_sensor)" mounting_plate="$(arg mounting_plate)" sim_platform="$(arg sim_platform)"/>
 
 </robot>
